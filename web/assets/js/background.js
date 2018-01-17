@@ -8,15 +8,15 @@ $('document').ready(function(){
     setInterval(function() {
         let colours = createColourCollection(colour);
         let gradients = buildWebkitLinearGradients(colours);
-        document.getElementById('wrapper').style.backgroundImage = gradients;
-        //console.log(gradients)
-        console.log(document.getElementById('wrapper').style.backgroundImage);
+        document.getElementById('wrapper').style.background = gradients;
+        console.log(gradients)
+        console.log(document.getElementById('wrapper').style.background);
     }, 100);
 });
 
 function createColourCollection(colour) {
     let colours = [];
-    for(let count = 0; count < 4; count++) {
+    for(let count = 0; count < 1; count++) {
         let rgb = colour.next();
         colours.push(rgb);
     }
@@ -37,7 +37,7 @@ function buildLinearGradients(colours, gradientBuilder = buildLinearGradient) {
         colour.alpha = 0.5;
         gredients.push(gradientBuilder(colour));
     }
-    return `${gredients.join(', ')};`;
+    return ` ${gredients.join(', ')}; `;
 }
 
 function buildWebkitLinearGradient(colour) {
