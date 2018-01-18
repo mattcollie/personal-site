@@ -16,7 +16,7 @@ $('document').ready(function(){
 
 function createColourCollection(colour) {
     let colours = [];
-    for(let count = 0; count < 1; count++) {
+    for(let count = 0; count < 4; count++) {
         let rgb = colour.next();
         colours.push(rgb);
     }
