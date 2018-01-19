@@ -7,7 +7,7 @@ body {
 #wrapper {
 	height: 100%;
 	width: 100%;
-	padding: 10%;
+	padding: 5%;
 	background: -webkit-linear-gradient(45deg, hsla(305, 97%, 44%, 0.5) 0%, hsla(305, 97%, 44%, 0) 70%),
 		-webkit-linear-gradient(315deg, hsla(201, 100%, 43%, 0.5) 10%, hsla(201, 100%, 43%, 0) 80%),
 		-webkit-linear-gradient(225deg, hsla(151, 92%, 43%, 0.5) 10%, hsla(151, 92%, 43%, 0) 80%),
@@ -21,5 +21,7 @@ body {
 .content-box {
     height: 100%;
 	width: 100%;
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
 }
