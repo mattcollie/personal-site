@@ -1,27 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
 body {
     height: 100%;
     width: 100%;
-    position: absolute;
+	position: absolute;
+	font-family: 'Amatic SC', cursive;
+}
+
+header {
+	text-align: center;
 }
 
 #wrapper {
 	height: 100%;
 	width: 100%;
-	padding: 5%;
-	background: -webkit-linear-gradient(45deg, hsla(305, 97%, 44%, 0.5) 0%, hsla(305, 97%, 44%, 0) 70%),
-		-webkit-linear-gradient(315deg, hsla(201, 100%, 43%, 0.5) 10%, hsla(201, 100%, 43%, 0) 80%),
-		-webkit-linear-gradient(225deg, hsla(151, 92%, 43%, 0.5) 10%, hsla(151, 92%, 43%, 0) 80%),
-		-webkit-linear-gradient(135deg, hsla(222, 99%, 41%, 0.5) 100%, hsla(222, 99%, 41%, 0) 70%);
-	background: linear-gradient(45deg, hsla(305, 97%, 44%, 0.5) 0%, hsla(305, 97%, 44%, 0) 70%),
-		linear-gradient(135deg, hsla(201, 100%, 43%, 0.5) 10%, hsla(201, 100%, 43%, 0) 80%),
-		linear-gradient(225deg, hsla(151, 92%, 43%, 0.5) 10%, hsla(151, 92%, 43%, 0) 80%),
-		linear-gradient(315deg, hsla(222, 99%, 41%, 0.5) 100%, hsla(222, 99%, 41%, 0) 70%);
+	padding: 2%;
+	background: -webkit-linear-gradient(45deg, hsla(305, 97%, 44%, 0.2) 0%, hsla(305, 97%, 44%, 0) 70%),
+		-webkit-linear-gradient(315deg, hsla(201, 100%, 43%, 0.2) 10%, hsla(201, 100%, 43%, 0) 80%),
+		-webkit-linear-gradient(225deg, hsla(151, 92%, 43%, 0.2) 10%, hsla(151, 92%, 43%, 0) 80%),
+		-webkit-linear-gradient(135deg, hsla(222, 99%, 41%, 0.2) 100%, hsla(222, 99%, 41%, 0) 70%);
+	background: linear-gradient(45deg, hsla(305, 97%, 44%, 0.2) 0%, hsla(305, 97%, 44%, 0) 70%),
+		linear-gradient(135deg, hsla(201, 100%, 43%, 0.2) 10%, hsla(201, 100%, 43%, 0) 80%),
+		linear-gradient(225deg, hsla(151, 92%, 43%, 0.2) 10%, hsla(151, 92%, 43%, 0) 80%),
+		linear-gradient(315deg, hsla(222, 99%, 41%, 0.2) 100%, hsla(222, 99%, 41%, 0) 70%);
 }
 
 .content-box {
     height: 100%;
 	width: 100%;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+	border-radius: 5px;
+	padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+	margin: 5%;
+	background-color: rgba(0, 0, 0, 0.1);
+ }
+
+@media only screen and (min-width: 768px) {
+	/* tablets and desktop */
+	.content-box {
+		width: 768px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+    /* phones */
+	.content-box {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+	.content-box {
+		width: 100%;
+	}
 }
