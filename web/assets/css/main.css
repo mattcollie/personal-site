@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
 
 body {
     height: 100%;
@@ -9,6 +10,13 @@ body {
 
 header {
 	text-align: center;
+}
+
+footer {
+	position: absolute;
+	bottom: 0; 
+	right: 10px;
+	font-family: 'Julius Sans One', sans-serif;
 }
 
 #wrapper {
@@ -33,18 +41,20 @@ header {
 	border-radius: 5px;
 	padding-top: 50px;
     margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
+	padding-bottom: 50px;
+	position: relative;
 }
 
 hr {
 	margin: 5%;
 	background-color: rgba(0, 0, 0, 0.1);
- }
+}
 
 @media only screen and (min-width: 768px) {
 	/* tablets and desktop */
 	.content-box {
-		width: 768px;
+		width: 750px;
 	}
 }
 
