@@ -1,3 +1,5 @@
+/* https://icomoon.io/app/#/select/image */
+
 .icon {
     display: inline-block;
     width: 1em;
@@ -16,7 +18,7 @@
   }
   ========================================== */
   
-.icon-home {
+.icon-home, .icon-linkedin, .icon-github {
   width: 32px;
   height: 32px;
 }
