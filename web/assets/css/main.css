@@ -129,14 +129,14 @@ nav {
 	background-color: #f6dbdb;
 	padding: 5px;
 	padding: 50%;
-	padding-top: calc(50% - 10%);
+	padding-top: calc(50% - 30%);
 	padding-right: calc(50% - 30%);
 	transition: 0.6s;
 	width: 150px;
 	margin-left: -100px;
 	text-align: right;
 	vertical-align: middle;
-	height: 75px;
+	height: 50px;
 }
 
 .nav-button:hover {
