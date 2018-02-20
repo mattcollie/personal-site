@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Profile.Access.Repository\Profile.Access.Repository.csproj" />
     <ProjectReference Include="..\Profile.Access.Service\Profile.Access.Service.csproj" />
+    <ProjectReference Include="..\Profile.Data.Access\Profile.Data.Access.csproj" />
     <ProjectReference Include="..\Profile.Data.Objects\Profile.Data.Objects.csproj" />
   </ItemGroup>
 
