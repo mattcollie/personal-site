@@ -14,6 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Profile.Access.Service\Profile.Access.Service.csproj" />
+    <ProjectReference Include="..\Profile.Data.Objects\Profile.Data.Objects.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="wwwroot\favicon.ico">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
