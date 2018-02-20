@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9C61DB6-BDAA-4F79-A0F2-0833EAEB27CC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Profile.Web</RootNamespace>
+    <AssemblyName>Profile.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Configuration.4.0.1\lib\net45\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.Owin.4.0.1\lib\net45\Autofac.Integration.Mvc.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Owin.4.2.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.1.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.Owin.4.0.0\lib\net45\Autofac.Integration.WebApi.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Configuration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.1.0.0\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin.Extensions, Version=0.8.5.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Extensions.0.8.5\lib\net40\Owin.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin.Types, Version=0.8.5.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.Types.0.8.5\lib\net40\Owin.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.2.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.4.2\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.4\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FixContentTypeHeader.cs" />
+    <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\svgStyles.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\git-svg\alert.svg" />
+    <Content Include="Images\git-svg\arrow-down.svg" />
+    <Content Include="Images\git-svg\arrow-left.svg" />
+    <Content Include="Images\git-svg\arrow-right.svg" />
+    <Content Include="Images\git-svg\arrow-small-down.svg" />
+    <Content Include="Images\git-svg\arrow-small-left.svg" />
+    <Content Include="Images\git-svg\arrow-small-right.svg" />
+    <Content Include="Images\git-svg\arrow-small-up.svg" />
+    <Content Include="Images\git-svg\arrow-up.svg" />
+    <Content Include="Images\git-svg\beaker.svg" />
+    <Content Include="Images\git-svg\bell.svg" />
+    <Content Include="Images\git-svg\bold.svg" />
+    <Content Include="Images\git-svg\book.svg" />
+    <Content Include="Images\git-svg\bookmark.svg" />
+    <Content Include="Images\git-svg\briefcase.svg" />
+    <Content Include="Images\git-svg\broadcast.svg" />
+    <Content Include="Images\git-svg\browser.svg" />
+    <Content Include="Images\git-svg\bug.svg" />
+    <Content Include="Images\git-svg\calendar.svg" />
+    <Content Include="Images\git-svg\check.svg" />
+    <Content Include="Images\git-svg\checklist.svg" />
+    <Content Include="Images\git-svg\chevron-down.svg" />
+    <Content Include="Images\git-svg\chevron-left.svg" />
+    <Content Include="Images\git-svg\chevron-right.svg" />
+    <Content Include="Images\git-svg\chevron-up.svg" />
+    <Content Include="Images\git-svg\circle-slash.svg" />
+    <Content Include="Images\git-svg\circuit-board.svg" />
+    <Content Include="Images\git-svg\clippy.svg" />
+    <Content Include="Images\git-svg\clock.svg" />
+    <Content Include="Images\git-svg\cloud-download.svg" />
+    <Content Include="Images\git-svg\cloud-upload.svg" />
+    <Content Include="Images\git-svg\code.svg" />
+    <Content Include="Images\git-svg\comment-discussion.svg" />
+    <Content Include="Images\git-svg\comment.svg" />
+    <Content Include="Images\git-svg\credit-card.svg" />
+    <Content Include="Images\git-svg\dash.svg" />
+    <Content Include="Images\git-svg\dashboard.svg" />
+    <Content Include="Images\git-svg\database.svg" />
+    <Content Include="Images\git-svg\desktop-download.svg" />
+    <Content Include="Images\git-svg\device-camera-video.svg" />
+    <Content Include="Images\git-svg\device-camera.svg" />
+    <Content Include="Images\git-svg\device-desktop.svg" />
+    <Content Include="Images\git-svg\device-mobile.svg" />
+    <Content Include="Images\git-svg\diff-added.svg" />
+    <Content Include="Images\git-svg\diff-ignored.svg" />
+    <Content Include="Images\git-svg\diff-modified.svg" />
+    <Content Include="Images\git-svg\diff-removed.svg" />
+    <Content Include="Images\git-svg\diff-renamed.svg" />
+    <Content Include="Images\git-svg\diff.svg" />
+    <Content Include="Images\git-svg\ellipsis.svg" />
+    <Content Include="Images\git-svg\eye.svg" />
+    <Content Include="Images\git-svg\file-binary.svg" />
+    <Content Include="Images\git-svg\file-code.svg" />
+    <Content Include="Images\git-svg\file-directory.svg" />
+    <Content Include="Images\git-svg\file-media.svg" />
+    <Content Include="Images\git-svg\file-pdf.svg" />
+    <Content Include="Images\git-svg\file-submodule.svg" />
+    <Content Include="Images\git-svg\file-symlink-directory.svg" />
+    <Content Include="Images\git-svg\file-symlink-file.svg" />
+    <Content Include="Images\git-svg\file-text.svg" />
+    <Content Include="Images\git-svg\file-zip.svg" />
+    <Content Include="Images\git-svg\file.svg" />
+    <Content Include="Images\git-svg\flame.svg" />
+    <Content Include="Images\git-svg\fold.svg" />
+    <Content Include="Images\git-svg\gear.svg" />
+    <Content Include="Images\git-svg\gift.svg" />
+    <Content Include="Images\git-svg\gist-secret.svg" />
+    <Content Include="Images\git-svg\gist.svg" />
+    <Content Include="Images\git-svg\git-branch.svg" />
+    <Content Include="Images\git-svg\git-commit.svg" />
+    <Content Include="Images\git-svg\git-compare.svg" />
+    <Content Include="Images\git-svg\git-merge.svg" />
+    <Content Include="Images\git-svg\git-pull-request.svg" />
+    <Content Include="Images\git-svg\globe.svg" />
+    <Content Include="Images\git-svg\grabber.svg" />
+    <Content Include="Images\git-svg\graph.svg" />
+    <Content Include="Images\git-svg\heart.svg" />
+    <Content Include="Images\git-svg\history.svg" />
+    <Content Include="Images\git-svg\home.svg" />
+    <Content Include="Images\git-svg\horizontal-rule.svg" />
+    <Content Include="Images\git-svg\hubot.svg" />
+    <Content Include="Images\git-svg\inbox.svg" />
+    <Content Include="Images\git-svg\info.svg" />
+    <Content Include="Images\git-svg\issue-closed.svg" />
+    <Content Include="Images\git-svg\issue-opened.svg" />
+    <Content Include="Images\git-svg\issue-reopened.svg" />
+    <Content Include="Images\git-svg\italic.svg" />
+    <Content Include="Images\git-svg\jersey.svg" />
+    <Content Include="Images\git-svg\kebab-horizontal.svg" />
+    <Content Include="Images\git-svg\kebab-vertical.svg" />
+    <Content Include="Images\git-svg\key.svg" />
+    <Content Include="Images\git-svg\keyboard.svg" />
+    <Content Include="Images\git-svg\law.svg" />
+    <Content Include="Images\git-svg\light-bulb.svg" />
+    <Content Include="Images\git-svg\link-external.svg" />
+    <Content Include="Images\git-svg\link.svg" />
+    <Content Include="Images\git-svg\list-ordered.svg" />
+    <Content Include="Images\git-svg\list-unordered.svg" />
+    <Content Include="Images\git-svg\location.svg" />
+    <Content Include="Images\git-svg\lock.svg" />
+    <Content Include="Images\git-svg\logo-gist.svg" />
+    <Content Include="Images\git-svg\logo-github.svg" />
+    <Content Include="Images\git-svg\mail-read.svg" />
+    <Content Include="Images\git-svg\mail-reply.svg" />
+    <Content Include="Images\git-svg\mail.svg" />
+    <Content Include="Images\git-svg\mark-github.svg" />
+    <Content Include="Images\git-svg\markdown.svg" />
+    <Content Include="Images\git-svg\megaphone.svg" />
+    <Content Include="Images\git-svg\mention.svg" />
+    <Content Include="Images\git-svg\milestone.svg" />
+    <Content Include="Images\git-svg\mirror.svg" />
+    <Content Include="Images\git-svg\mortar-board.svg" />
+    <Content Include="Images\git-svg\mute.svg" />
+    <Content Include="Images\git-svg\no-newline.svg" />
+    <Content Include="Images\git-svg\note.svg" />
+    <Content Include="Images\git-svg\octoface.svg" />
+    <Content Include="Images\git-svg\organization.svg" />
+    <Content Include="Images\git-svg\package.svg" />
+    <Content Include="Images\git-svg\paintcan.svg" />
+    <Content Include="Images\git-svg\pencil.svg" />
+    <Content Include="Images\git-svg\person.svg" />
+    <Content Include="Images\git-svg\pin.svg" />
+    <Content Include="Images\git-svg\plug.svg" />
+    <Content Include="Images\git-svg\plus-small.svg" />
+    <Content Include="Images\git-svg\plus.svg" />
+    <Content Include="Images\git-svg\primitive-dot.svg" />
+    <Content Include="Images\git-svg\primitive-square.svg" />
+    <Content Include="Images\git-svg\project.svg" />
+    <Content Include="Images\git-svg\pulse.svg" />
+    <Content Include="Images\git-svg\question.svg" />
+    <Content Include="Images\git-svg\quote.svg" />
+    <Content Include="Images\git-svg\radio-tower.svg" />
+    <Content Include="Images\git-svg\reply.svg" />
+    <Content Include="Images\git-svg\repo-clone.svg" />
+    <Content Include="Images\git-svg\repo-force-push.svg" />
+    <Content Include="Images\git-svg\repo-forked.svg" />
+    <Content Include="Images\git-svg\repo-pull.svg" />
+    <Content Include="Images\git-svg\repo-push.svg" />
+    <Content Include="Images\git-svg\repo.svg" />
+    <Content Include="Images\git-svg\rocket.svg" />
+    <Content Include="Images\git-svg\rss.svg" />
+    <Content Include="Images\git-svg\ruby.svg" />
+    <Content Include="Images\git-svg\screen-full.svg" />
+    <Content Include="Images\git-svg\screen-normal.svg" />
+    <Content Include="Images\git-svg\search.svg" />
+    <Content Include="Images\git-svg\server.svg" />
+    <Content Include="Images\git-svg\settings.svg" />
+    <Content Include="Images\git-svg\shield.svg" />
+    <Content Include="Images\git-svg\sign-in.svg" />
+    <Content Include="Images\git-svg\sign-out.svg" />
+    <Content Include="Images\git-svg\smiley.svg" />
+    <Content Include="Images\git-svg\squirrel.svg" />
+    <Content Include="Images\git-svg\star.svg" />
+    <Content Include="Images\git-svg\stop.svg" />
+    <Content Include="Images\git-svg\sync.svg" />
+    <Content Include="Images\git-svg\tag.svg" />
+    <Content Include="Images\git-svg\tasklist.svg" />
+    <Content Include="Images\git-svg\telescope.svg" />
+    <Content Include="Images\git-svg\terminal.svg" />
+    <Content Include="Images\git-svg\text-size.svg" />
+    <Content Include="Images\git-svg\three-bars.svg" />
+    <Content Include="Images\git-svg\thumbsdown.svg" />
+    <Content Include="Images\git-svg\thumbsup.svg" />
+    <Content Include="Images\git-svg\tools.svg" />
+    <Content Include="Images\git-svg\trashcan.svg" />
+    <Content Include="Images\git-svg\triangle-down.svg" />
+    <Content Include="Images\git-svg\triangle-left.svg" />
+    <Content Include="Images\git-svg\triangle-right.svg" />
+    <Content Include="Images\git-svg\triangle-up.svg" />
+    <Content Include="Images\git-svg\unfold.svg" />
+    <Content Include="Images\git-svg\unmute.svg" />
+    <Content Include="Images\git-svg\unverified.svg" />
+    <Content Include="Images\git-svg\verified.svg" />
+    <Content Include="Images\git-svg\versions.svg" />
+    <Content Include="Images\git-svg\watch.svg" />
+    <Content Include="Images\git-svg\x.svg" />
+    <Content Include="Images\git-svg\zap.svg" />
+    <Content Include="Images\profile.jpg" />
+    <Content Include="Images\svg\alarm.svg" />
+    <Content Include="Images\svg\amazon.svg" />
+    <Content Include="Images\svg\android.svg" />
+    <Content Include="Images\svg\appleinc.svg" />
+    <Content Include="Images\svg\attachment.svg" />
+    <Content Include="Images\svg\backward.svg" />
+    <Content Include="Images\svg\bell.svg" />
+    <Content Include="Images\svg\blocked.svg" />
+    <Content Include="Images\svg\book.svg" />
+    <Content Include="Images\svg\bookmark.svg" />
+    <Content Include="Images\svg\bookmarks.svg" />
+    <Content Include="Images\svg\cancel-circle.svg" />
+    <Content Include="Images\svg\cart.svg" />
+    <Content Include="Images\svg\checkbox-checked.svg" />
+    <Content Include="Images\svg\checkbox-unchecked.svg" />
+    <Content Include="Images\svg\checkmark.svg" />
+    <Content Include="Images\svg\checkmark2.svg" />
+    <Content Include="Images\svg\chrome.svg" />
+    <Content Include="Images\svg\circle-down.svg" />
+    <Content Include="Images\svg\circle-left.svg" />
+    <Content Include="Images\svg\circle-right.svg" />
+    <Content Include="Images\svg\circle-up.svg" />
+    <Content Include="Images\svg\clock.svg" />
+    <Content Include="Images\svg\clock2.svg" />
+    <Content Include="Images\svg\cloud-check.svg" />
+    <Content Include="Images\svg\cloud-download.svg" />
+    <Content Include="Images\svg\cloud-upload.svg" />
+    <Content Include="Images\svg\cloud.svg" />
+    <Content Include="Images\svg\compass.svg" />
+    <Content Include="Images\svg\compass2.svg" />
+    <Content Include="Images\svg\connection.svg" />
+    <Content Include="Images\svg\crop.svg" />
+    <Content Include="Images\svg\cross.svg" />
+    <Content Include="Images\svg\download.svg" />
+    <Content Include="Images\svg\dropbox.svg" />
+    <Content Include="Images\svg\earth.svg" />
+    <Content Include="Images\svg\edge.svg" />
+    <Content Include="Images\svg\embed.svg" />
+    <Content Include="Images\svg\embed2.svg" />
+    <Content Include="Images\svg\enter.svg" />
+    <Content Include="Images\svg\exit.svg" />
+    <Content Include="Images\svg\eye-blocked.svg" />
+    <Content Include="Images\svg\eye-minus.svg" />
+    <Content Include="Images\svg\eye-plus.svg" />
+    <Content Include="Images\svg\eye.svg" />
+    <Content Include="Images\svg\facebook.svg" />
+    <Content Include="Images\svg\facebook2.svg" />
+    <Content Include="Images\svg\file-excel.svg" />
+    <Content Include="Images\svg\file-openoffice.svg" />
+    <Content Include="Images\svg\file-pdf.svg" />
+    <Content Include="Images\svg\file-picture.svg" />
+    <Content Include="Images\svg\file-word.svg" />
+    <Content Include="Images\svg\filter.svg" />
+    <Content Include="Images\svg\firefox.svg" />
+    <Content Include="Images\svg\floppy-disk.svg" />
+    <Content Include="Images\svg\folder-download.svg" />
+    <Content Include="Images\svg\folder-minus.svg" />
+    <Content Include="Images\svg\folder-open.svg" />
+    <Content Include="Images\svg\folder-plus.svg" />
+    <Content Include="Images\svg\folder-upload.svg" />
+    <Content Include="Images\svg\folder.svg" />
+    <Content Include="Images\svg\forward2.svg" />
+    <Content Include="Images\svg\git.svg" />
+    <Content Include="Images\svg\github.svg" />
+    <Content Include="Images\svg\google-drive.svg" />
+    <Content Include="Images\svg\google-plus2.svg" />
+    <Content Include="Images\svg\google-plus3.svg" />
+    <Content Include="Images\svg\google.svg" />
+    <Content Include="Images\svg\google2.svg" />
+    <Content Include="Images\svg\hangouts.svg" />
+    <Content Include="Images\svg\home.svg" />
+    <Content Include="Images\svg\home2.svg" />
+    <Content Include="Images\svg\home3.svg" />
+    <Content Include="Images\svg\hour-glass.svg" />
+    <Content Include="Images\svg\html-five.svg" />
+    <Content Include="Images\svg\html-five2.svg" />
+    <Content Include="Images\svg\IE.svg" />
+    <Content Include="Images\svg\image.svg" />
+    <Content Include="Images\svg\images.svg" />
+    <Content Include="Images\svg\info.svg" />
+    <Content Include="Images\svg\instagram.svg" />
+    <Content Include="Images\svg\joomla.svg" />
+    <Content Include="Images\svg\libreoffice.svg" />
+    <Content Include="Images\svg\link.svg" />
+    <Content Include="Images\svg\linkedin.svg" />
+    <Content Include="Images\svg\linkedin2.svg" />
+    <Content Include="Images\svg\location.svg" />
+    <Content Include="Images\svg\location2.svg" />
+    <Content Include="Images\svg\loop2.svg" />
+    <Content Include="Images\svg\mail4.svg" />
+    <Content Include="Images\svg\menu2.svg" />
+    <Content Include="Images\svg\menu3.svg" />
+    <Content Include="Images\svg\menu4.svg" />
+    <Content Include="Images\svg\next.svg" />
+    <Content Include="Images\svg\notification.svg" />
+    <Content Include="Images\svg\npm.svg" />
+    <Content Include="Images\svg\onedrive.svg" />
+    <Content Include="Images\svg\paragraph-center.svg" />
+    <Content Include="Images\svg\paragraph-justify.svg" />
+    <Content Include="Images\svg\paragraph-left.svg" />
+    <Content Include="Images\svg\paragraph-right.svg" />
+    <Content Include="Images\svg\pause.svg" />
+    <Content Include="Images\svg\paypal.svg" />
+    <Content Include="Images\svg\pencil.svg" />
+    <Content Include="Images\svg\pie-chart.svg" />
+    <Content Include="Images\svg\pinterest.svg" />
+    <Content Include="Images\svg\pinterest2.svg" />
+    <Content Include="Images\svg\play.svg" />
+    <Content Include="Images\svg\play2.svg" />
+    <Content Include="Images\svg\previous.svg" />
+    <Content Include="Images\svg\price-tag.svg" />
+    <Content Include="Images\svg\price-tags.svg" />
+    <Content Include="Images\svg\pushpin.svg" />
+    <Content Include="Images\svg\question.svg" />
+    <Content Include="Images\svg\radio-checked.svg" />
+    <Content Include="Images\svg\radio-checked2.svg" />
+    <Content Include="Images\svg\radio-unchecked.svg" />
+    <Content Include="Images\svg\reddit.svg" />
+    <Content Include="Images\svg\rss.svg" />
+    <Content Include="Images\svg\rss2.svg" />
+    <Content Include="Images\svg\safari.svg" />
+    <Content Include="Images\svg\scissors.svg" />
+    <Content Include="Images\svg\share2.svg" />
+    <Content Include="Images\svg\skype.svg" />
+    <Content Include="Images\svg\soundcloud.svg" />
+    <Content Include="Images\svg\soundcloud2.svg" />
+    <Content Include="Images\svg\spell-check.svg" />
+    <Content Include="Images\svg\sphere.svg" />
+    <Content Include="Images\svg\spotify.svg" />
+    <Content Include="Images\svg\stack.svg" />
+    <Content Include="Images\svg\stackoverflow.svg" />
+    <Content Include="Images\svg\steam.svg" />
+    <Content Include="Images\svg\steam2.svg" />
+    <Content Include="Images\svg\stop.svg" />
+    <Content Include="Images\svg\switch.svg" />
+    <Content Include="Images\svg\table.svg" />
+    <Content Include="Images\svg\table2.svg" />
+    <Content Include="Images\svg\telegram.svg" />
+    <Content Include="Images\svg\terminal.svg" />
+    <Content Include="Images\svg\trello.svg" />
+    <Content Include="Images\svg\tux.svg" />
+    <Content Include="Images\svg\twitch.svg" />
+    <Content Include="Images\svg\twitter.svg" />
+    <Content Include="Images\svg\upload.svg" />
+    <Content Include="Images\svg\warning.svg" />
+    <Content Include="Images\svg\whatsapp.svg" />
+    <Content Include="Images\svg\wikipedia.svg" />
+    <Content Include="Images\svg\windows.svg" />
+    <Content Include="Images\svg\windows8.svg" />
+    <Content Include="Images\svg\wordpress.svg" />
+    <Content Include="Images\svg\youtube.svg" />
+    <Content Include="Images\svg\youtube2.svg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Contact\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Profile.Access.Common\Profile.Access.Common.csproj">
+      <Project>{f12a4272-0488-417a-9653-32a590285b75}</Project>
+      <Name>Profile.Access.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Profile.Access.Repository\Profile.Access.Repository.csproj">
+      <Project>{aaed51a8-5481-41f0-8217-b7a9459170b9}</Project>
+      <Name>Profile.Access.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Profile.Access.Service\Profile.Access.Service.csproj">
+      <Project>{9c3b9524-d004-4ee7-9ea3-6a0c58e55510}</Project>
+      <Name>Profile.Access.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Profile.Data.Access\Profile.Data.Access.csproj">
+      <Project>{aa4a3105-2512-461e-8a98-dcdbc92eb22a}</Project>
+      <Name>Profile.Data.Access</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Profile.Data.Objects\Profile.Data.Objects.csproj">
+      <Project>{00d8fb8c-6844-4f2b-8deb-786ecde3d839}</Project>
+      <Name>Profile.Data.Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62131</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62131/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

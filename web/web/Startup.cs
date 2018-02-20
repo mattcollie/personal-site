@@ -24,7 +24,7 @@ namespace web
         {
             services.AddMvc();
 
-            throw new System.Exception("THIS BREAKS, YOU NEED TO REGISTER DB CONTEXT");
+            // throw new System.Exception("THIS BREAKS, YOU NEED TO REGISTER DB CONTEXT");
             services.AddTransient<IContactRepository, ContactRepository>();
             services.AddTransient<IContactService, ContactService>();
         }

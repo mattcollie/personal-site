@@ -6,5 +6,6 @@ namespace Profile.Access.Service.Interfaces
 {
     public interface IContactService : IService<ContactDto, Contact>
     {
+        bool Add(ContactDto contact);
     }
 }
