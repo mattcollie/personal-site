@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Web.Mvc;
 using Profile.Access.Service.Interfaces;
@@ -25,8 +26,8 @@ namespace Profile.Web.Controllers
                 Subject = data.Subject,
                 Message = data.Message
             });
-            HttpResponseMessage response = Request.CreateResponse<bool>(HttpStatusCode.OK, success);
-            return response;
+
+            return Request.CreateResponse<bool>(HttpStatusCode.OK, success);
         }
     }
 }
